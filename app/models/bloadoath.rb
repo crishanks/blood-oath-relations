@@ -1,18 +1,15 @@
 class BloodOath
     @@all = []
-    attr_accessor :initiation_date, :cult, :follower
+    attr_accessor :cult, :follower, :initiation_date
 
-    def initialize(initiation_date, cult, follower)
-        @initiation_date = initiation_date
+    def initialize(cult, follower, initiation_date)
         @cult = cult
         @follower = follower
+        @initiation_date = initiation_date
+
         @@all << self
     end
 
-    def self.first_oath
-        BloodOath.all[0].follower
-    end
-    
     def self.all
         @@all
     end
